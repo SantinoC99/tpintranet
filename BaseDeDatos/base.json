@@ -1,0 +1,30 @@
+{
+  "usuarios": [
+    {
+      "tipoDocumento": "DNI",
+      "nroDocumento": "12345678",
+      "nombre": "Jorge",
+      "apellido": "Higuain",
+      "anio": 7,
+      "division": "5"
+    },
+
+    {
+      "tipoDocumento": "DNI",
+      "nroDocumento": "08765432",
+      "nombre": "Charles",
+      "apellido": "Puyol",
+      "anio": 7,
+      "division": "4"
+    },
+
+    {
+      "tipoDocumento": "DNI",
+      "nroDocumento": "47589824",
+      "nombre": "Roberto",
+      "apellido": "Albanes",
+      "anio": 7,
+      "division": "2"
+    }
+  ]
+}
