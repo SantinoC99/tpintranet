@@ -48,7 +48,6 @@ footer::before {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -68,4 +67,41 @@ li {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 3px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f0f0f0;
 }
