@@ -10,16 +10,182 @@
     <img src="Imagenes/head.jpg" class="header-foto" />
   </header>
   <body>
+    <div class="container">
+      <h2>MODIFICACION DE USUARIO</h2>
+      <center>
+      <div>
+        <p style="text-align: center">Datos del usuario</p>
+      </div>
+      <form id="formulario" onsubmit="validarDatos()">
+
+        <div>
+          <label>Tipo de documento:</label>
+          <select id="tipo_documento">
+            <option value="DNI">DNI</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Numero de documento:</label>
+          <input
+            type="text"
+            id="numero_documento"
+            maxlength="11"
+          />
+        </div>
+        <br>
+        <br>
+        <div>
+          <label>Nombre:</label>
+          <input type="text" id="nombre"maxlength="20"/>
+        </div>
+
+        <div>
+          <label>Apellido:</label>
+          <input type="text" id="apellido" maxlength="20"/>
+        </div>
+
+        <div>
+          <label for="anio">Año:</label>
+          <select id="anio">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+
+        <div>
+          <label>División:</label>
+          <select id="division">
+            <option value="1">1o</option>
+            <option value="2">2o</option>
+            <option value="3">3o</option>
+            <option value="4">4o</option>
+            <option value="5">5o</option>
+            <option value="6">6o</option>
+            <option value="7">7o</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Email:</label>
+          <input type="email" id="email" maxlength="100"/>
+        </div>
+        <br>
+        <button type="submit">Modificar Datos</button>
+        <button type="reset">Borrar datos</button>
+      </center>
+      </form>
 
 
-
-
-    <hr/>
-    <footer>
-    <p>E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024)</p>
-    <p>Proyecto de implementación de sitios web dinámicos</p>
+      <hr/>
+      <footer>
+        <p>E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024)</p>
+        <p>Proyecto de implementación de sitios web dinámicos</p>
         <p>Autores: Cabrera, Casagerone, Dangelo, Eiras</p>
-    </footer>
+      </footer>
     </div>
-  </body>
+
+<script>
+
+
+function modificarUsuario(
+  tipoDocumento,
+  numeroDocumento,
+  nombre,
+  apellido,
+  anio,
+  division
+  ){
+
+
+  // Buscar el usuario por Tipo de documento y Numero de documento
+  var usuarioEncontrado = usuarios.find(function(usuario){
+    return (
+      usuario.tipoDocumento === tipo_documento &&
+      usuario.nroDocumento === numero_documento
+    );
+  });
+
+  // Si se encuentra el usuario, modificar sus datos
+  if (usuarioEncontrado){
+    alert("usuario encontrado");
+    usuarioEncontrado.nombre = nombre;
+    usuarioEncontrado.apellido = apellido;
+    usuarioEncontrado.anio = anio;
+    usuarioEncontrado.division = division;
+    alert("usuario modificado con exito");
+  
+  }else {
+    alert("usuario NO encontrado");
+  }
+}
+
+function validarDatos(){
+  var tipoDocumento = document.getElementById("tipo_documento").value;
+  var numeroDocumento = document.getElementById("numero_documento").value;
+  var nombre = document.getElementById("nombre").value;
+  var apellido = document.getElementById("apellido").value;
+  var email = document.getElementById("email").value;
+
+  if (
+    tipoDocumento === "" ||
+    numeroDocumento === "" ||
+    nombre === "" ||
+    apellido === "" ||
+    email === ""
+  ) {
+    alert("Complete todos los campos");
+    return false;
+  }
+
+  if (!/^[a-zA-Z]+$/.test(nombre)) {
+    alert("El nombre solo debe contener letras");
+    return false;
+  }
+
+  if (!/^[a-zA-Z]+$/.test(apellido)) {
+    alert("El apellido solo debe contener letras");
+    return false;
+  }
+  else{
+
+  fetch('BaseDeDatos/base.json')
+  .then(response => response.json())
+  .then(data => {
+    var usuarios = data.usuarios;
+    if(usuarios!= ""){
+      alert("JSON inicializado");
+      test();
+      modificarUsuario(
+      tipo_documento= document.getElementById("tipo_documento").value,
+      numero_documento= document.getElementById("numero_documento").value,
+      nombre= document.getElementById("nombre").value,
+      apellidoo = document.getElementById("apellido").value,
+      anio = document.getElementById("anio").value,
+      division = document.getElementById("division").value,
+    )
+    }
+
+  })
+  .catch(error => console.error('Error cargando base.json:', error));
+
+  }
+  }
+//inicializarJson()
+
+function test(){
+  alert("se llamo a la funcion")
+}
+
+
+
+</script>
+</body>
 </html>

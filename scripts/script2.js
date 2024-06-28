@@ -25,3 +25,5 @@ document.addEventListener("DOMContentLoaded", function () {
       totalUsuarios.textContent = `Total de usuarios: ${usuarios.length}`; // actualiza el contenido del elemento de total de usuarios
     });
 });
+
+
