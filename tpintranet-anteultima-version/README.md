@@ -6,11 +6,9 @@ tpintranet/ RAIZ
 
 ./php -> Incluye:
 
-parametros.php para establecer coneccion a la BDD en los diferentes archivos.
+.index.php archivo de portada que muestra la lista de usuarios y permite agregar y modificar usuarios.
 
-funcionAgregar.php para agregar usuarios.
-
-funcionEliminar.php para eliminar usuarios.
+parametros.php para establecer conexion a la BDD en los diferentes archivos.
 
 ModifcarUsuario.php para modificar usuarios.
 
@@ -20,4 +18,4 @@ archivo.sql para armar la BDD.
 
 insertar.sql para añadir datos a la BDD desde un archivo.
 
-.index.php archivo de portada que muestra la lista de usuarios y permite acceder a las funciones PHP.
+
