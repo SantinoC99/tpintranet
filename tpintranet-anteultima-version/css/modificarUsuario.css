@@ -1,0 +1,47 @@
+body{
+    background-image:url('../img/head.jpg');
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+h1{
+    font-size: 50px;
+    background-color: white;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+label{
+    font-size: 40px;
+}
+
+input{
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    border-radius:8px;
+    text-align: center;
+}
+
+button{
+    margin-top:50px;
+    width:250px;
+    height: 80px;
+    background-color: darkblue;
+    font-size:20px;
+    color: white;
+    border-radius:12px;
+}
+
+form{
+    justify-items:center;
+    align-items: center;
+    background-color: beige;
+    margin-left: 700px;
+    margin-right: 700px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    border-radius:20px;
+}
